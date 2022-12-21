@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        background: blue;
+      }
+
+      .wrapper {
+        display: flex;
+      }
+
+      .wrapper .text {
+        color: #fff;
+        font-size: 60px;
+        font-weight: 400;
+      }
+
+      .wrapper .text-berjalan {
+        margin-left: 15px;
+        height: 90px;
+        line-height: 90px;
+        overflow: hidden;
+      }
+
+      .text-berjalan li {
+        list-style: none;
+        color: aqua;
+        font-size: 60px;
+        font-weight: 500;
+        position: relative;
+        top: 0;
+        animation: slide 12s steps(4) infinite;
+      }
+
+      @keyframes slide {
+        100% {
+          top: -360px;
+        }
+      }
+
+      .text-berjalan li span {
+        position: relative;
+        margin: 5px 0;
+        line-height: 90px;
+      }
+
+      .text-berjalan li span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 78px;
+        width: 100%;
+        background: blue;
+        border-left: 2px solid #fff;
+        animation: typing 3s steps(14) infinite;
+      }
+
+      @keyframes typing {
+        40%,
+        60% {
+          left: calc(100% + 30%);
+        }
+        100% {
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="text">Hai Aku</div>
+      <ul class="text-berjalan">
+        <li><span>Lisvindanu</span></li>
+        <li><span>Programmer</span></li>
+        <li><span>Lisvindanu</span></li>
+        <li><span>Gamer</span></li>
+      </ul>
+    </div>
+  </body>
+</html>
