@@ -2,7 +2,14 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: #ac94f4;
+  background: linear-gradient(
+    380.59deg,
+    #2d3961 0%,
+    #385a70 27.59%,
+    #3d4f7e 75.52%
+  );
+  background-repeat: repeat;
+  background-size: cover;
   font-family: "Tillana", cursive;
   box-sizing: border-box;
   display: flex;
@@ -57,7 +64,6 @@ nav ul li a {
 main {
   grid-area: main;
   font-family: "Covered By Your Grace", cursive;
-  background-image: -webkit-linear-gradient(to right);
 }
 
 /* #sidebar {
@@ -69,16 +75,26 @@ main {
   /* background-color: salmon; */
   grid-area: content1;
   margin-left: 40px;
+  display: flex;
+  flex-direction: row;
+  height: 300px;
 }
 
 #content2 {
   /* background-color: rgb(122, 54, 47); */
   grid-area: content2;
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  margin-left: 30px;
 }
 
 #content3 {
   /* background-color: rgb(200, 44, 26); */
   grid-area: content3;
+  display: flex;
+  flex-direction: row;
+  height: 300px;
 }
 #content4 {
   /* background-color: rgb(200, 44, 26); */
@@ -96,7 +112,14 @@ footer {
 }
 
 .dark-mode {
-  background-color: rgb(32, 29, 29);
+  background: linear-gradient(
+    380.59deg,
+    #5e72b4 10%,
+    #259ff0 27.59%,
+    #0f2764 75.52%
+  );
+
+  background-position: 100%;
 
   color: white;
 }
@@ -107,11 +130,11 @@ footer {
   float: right;
 }
 
-@media (max-width: 760px) {
+/* @media (max-width: 760px) {
   body {
     max-width: 100%;
     overflow-x: hidden;
-    /* align-items: center; */
+    align-items: center;
   }
   nav ul {
     width: 150%;
@@ -138,7 +161,7 @@ footer {
 
   .c-about {
     grid-area: c-about;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -155,15 +178,15 @@ footer {
   }
 
   .overlayimajes {
-    position: absolute;
-    width: 19.6%;
-    height: 15.8%;
+    position: relative;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
+    background: rgba(243, 4, 4, 0.5);
+    opacity: 1;
     transition: 1.4s;
   }
 
@@ -181,7 +204,7 @@ footer {
     text-decoration: none;
     color: rgb(248, 240, 240);
   }
-}
+} */
 
 .c-about {
   grid-area: c-about;
@@ -275,9 +298,9 @@ footer {
   left: 0;
   height: 90px;
   width: 100%;
-  background: #ac94f4;
+  background: #3d4f7e;
   border-left: 2px solid #fff;
-  animation: typing 3s steps(14) infinite;
+  animation: typing 3s steps(18) infinite;
 }
 
 @keyframes typing {
@@ -287,5 +310,40 @@ footer {
   }
   100% {
     left: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    margin: 0;
+    height: 100%;
+    grid-template-columns: 1%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+      "nav"
+      /* "main" */
+      "content1"
+      "content2"
+      "content3"
+      "content4"
+      "c-about"
+      "footer";
+  }
+
+  .content3 {
+    margin-left: 40px;
+  }
+
+  .content4 {
+    margin-left: 40px;
+  }
+
+  .nav,
+  .main {
+    width: 10%;
+  }
+
+  .wrapper {
+    font-size: 20px;
   }
 }
